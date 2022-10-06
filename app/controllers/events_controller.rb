@@ -1,25 +1,22 @@
 class EventsController < ApplicationController
   before_action :set_event, only: %i[ show edit update destroy ]
   def index
-    @events = Event.all
-    # @events = policy_scope(Event)
+    @events = policy_scope(Event)
   end
 
   def show
-    # authorize @event
+    authorize @event
   end
 
   def new
     @event = Event.new
-    # authorize @event
+    authorize @event
   end
 
   def create
     @event = Event.new(event_params)
     @event.user = current_user
-    # authorize @event
-    # raise
-    # @event.user = current_user
+    authorize @event
     if @event.save!
       redirect_to events_path, notice: "Event was successfully created."
     else
@@ -28,7 +25,7 @@ class EventsController < ApplicationController
   end
 
   def edit
-    # authorize @event
+    authorize @event
   end
 
   def update
@@ -37,7 +34,7 @@ class EventsController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
-    # authorize @event
+    authorize @event
   end
 
   def destroy
