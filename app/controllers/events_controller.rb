@@ -5,7 +5,15 @@ class EventsController < ApplicationController
   end
 
   def show
+    # Provide event data
     authorize @event
+    # Provide attendee data
+    @attendees = @event.attendees
+    # authorize @ !!!!!!!!!!!!!!! NEED TO CREATE A POLICY FOR THIS
+    # Check user is in list of attendees
+    @current_user_has_booked = current_user_has_booked(@attendees)
+    # Return current user's booking if has occurred
+    @current_user_booking = EventBooking.find_by(user: current_user, event: @event)
   end
 
   def new
@@ -51,5 +59,9 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:title, :description, :price)
+  end
+
+  def current_user_has_booked(attendees)
+    attendees.include?(current_user)
   end
 end

@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   # root "articles#index"
   root to: "pages#home"
   resources :users
-  resources :events
+  resources :events do
+    resources :event_bookings, only: [ :create ]
+  end
+  resources :event_bookings, only: [ :destroy ]
   resources :shops
 end

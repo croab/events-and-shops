@@ -1,6 +1,18 @@
 <div>
   <h1><%= @event.title %></h1>
+  <h3>Attendees</h3>
+  <ul>
+    <% @attendees.each do |attendee| %>
+      <li><%= attendee.first_name %></li>
+    <% end %>
+  </ul>
   <%= link_to "Back to events", events_path %>
+  <% if @current_user_has_booked %>
+      <%= button_to "I can't make it!", event_booking_path(@current_user_booking), method: :delete, data: {turbo_method: :delete} %>
+  <% else %>
+    <%= button_to "Take part!", event_event_bookings_path(@event) %>
+  <% end %>
+
   <%= link_to "Edit event", edit_event_path(@event) %>
   <%= button_to "Delete", event_path(@event), method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 </div>
