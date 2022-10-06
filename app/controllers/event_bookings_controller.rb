@@ -5,7 +5,7 @@ class EventBookingsController < ApplicationController
     event = Event.find(params[:event_id])
     @event_booking.event = event
     if @event_booking.save!
-      redirect_to event_path(event), notice: "Event was successfully created."
+      redirect_to event_path(event)
     else
       render event_path(event), status: :unprocessable_entity
     end
@@ -16,6 +16,6 @@ class EventBookingsController < ApplicationController
     @event_booking = EventBooking.find(params[:id])
     authorize @event_booking
     @event_booking.destroy
-    redirect_to event_path(@event_booking.event), status: :see_other, notice: "Booking was successfully destroyed."
+    redirect_to event_path(@event_booking.event), status: :see_other
   end
 end
