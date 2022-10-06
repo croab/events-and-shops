@@ -1,0 +1,10 @@
+<div>
+  <%= simple_form_for @event do |f| %>
+    <%= f.input :title, as: :string %>
+    <%= f.input :description, as: :text %>
+    <%= f.input :price, as: :float %>
+    <%= f.submit "Update event" %>
+  <% end %>
+
+  <%= link_to "Back to events", events_path %>
+</div>
