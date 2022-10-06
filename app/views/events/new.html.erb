@@ -1,0 +1,7 @@
+<%= simple_form_for @event do |f| %>
+  <%= f.input :title, as: :string, placeholder: 'Title' %>
+  <%= f.input :description, as: :text, placeholder: 'Description' %>
+  <%= f.input :price, as: :float %>
+  <%= f.submit "Create event" %>
+<% end %>
+<%= link_to "Back to events", events_path %>

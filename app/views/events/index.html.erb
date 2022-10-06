@@ -1,0 +1,7 @@
+<h1>Event index</h1>
+<% @events.each do |event| %>
+  <%= render "event", event: event %>
+<% end %>
+<%# if policy(@events).new? %>
+  <%= link_to "Create new event", new_event_path %>
+<%# end %>
