@@ -11,17 +11,19 @@ class ShopsController < ApplicationController
 
   def new
     @shop = Shop.new
+    authorize @shop
   end
 
   def create
     @shop = Shop.new(shop_params)
-    # Need to associate a user as a shop owner HERE
     authorize @shop
+    # raise
     if @shop.save!
       redirect_to shops_path, notice: "Your shop has been added!"
     else
       render :new, status: :unprocessable_entity
     end
+    ShopAdmin.create!(user: current_user, shop: @shop)
   end
 
   def edit

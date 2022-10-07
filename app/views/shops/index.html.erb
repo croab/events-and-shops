@@ -1,2 +1,9 @@
-<h1>Shops#index</h1>
-<p>Find me in app/views/shops/index.html.erb</p>
+<div class="shops">
+  <h1>Shops</h1>
+  <% @shops.each do |shop| %>
+    <%= render "shop_card", shop: shop %>
+  <% end %>
+  <%# if policy(@events).new? %>
+    <%= link_to "Add store", new_shop_path %>
+  <%# end %>
+</div>

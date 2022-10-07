@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :events
   has_many :shops
+  belongs_to :event_booking
+  belongs_to :shop_admin
 end

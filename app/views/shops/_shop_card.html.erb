@@ -1,0 +1,9 @@
+<div class="shop-card">
+  <h2><%= shop.name %></h2>
+  <p><%= shop.summary %></p>
+  <p><%= shop.description %></p>
+  <%= link_to "Browse", shop_path(shop) %>
+  <%= link_to "Edit event", edit_shop_path(shop) %>
+  <%= button_to "Delete", shop_path(shop), method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+</div>
+</div>
