@@ -2,6 +2,9 @@
   <ul>
     <% if user_signed_in? %>
       <li>
+        <p>Signed in as: <%= current_user.first_name %></p>
+      </li>
+      <li>
         <%= link_to "Home", root_path %>
       </li>
       <li>

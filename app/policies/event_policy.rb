@@ -20,6 +20,6 @@ class EventPolicy < ApplicationPolicy
   end
 
   def destroy?
-    record.user == user
+    record.user == user || user.site_admin?
   end
 end

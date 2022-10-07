@@ -6,4 +6,12 @@ class User < ApplicationRecord
   has_many :events
   has_many :event_bookings
   has_many :shop_admins
+
+  def is_site_admin?
+    site_admin == true
+  end
+
+  def is_verified?
+
+  end
 end
