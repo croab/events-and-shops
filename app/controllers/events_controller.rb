@@ -48,7 +48,7 @@ class EventsController < ApplicationController
   def destroy
     authorize @event
     @event.destroy
-    redirect_to events_url, status: :see_other, notice: "Event was successfully destroyed."
+    redirect_to events_url, status: :see_other, notice: "Event was successfully deleted."
   end
 
   private

@@ -1,2 +1,9 @@
-<h1>Shops#edit</h1>
-<p>Find me in app/views/shops/edit.html.erb</p>
+<div class="edit-shop-form">
+  <%= simple_form_for @shop do |f| %>
+    <%= f.input :name, as: :string %>
+    <%= f.input :summary, as: :string %>
+    <%= f.input :description, as: :text %>
+    <%= f.submit "Update store" %>
+  <% end %>
+  <%= link_to "See all stores", shops_path %>
+</div>

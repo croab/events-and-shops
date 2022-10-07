@@ -27,13 +27,22 @@ class ShopsController < ApplicationController
   end
 
   def edit
-
+    authorize @shop
   end
 
   def update
+    if @shop.update(shop_params)
+      redirect_to shops_path, notice: "Shop was successfully updated."
+    else
+      render :edit, status: :unprocessable_entity
+    end
+    authorize @shop
   end
 
   def destroy
+    authorize @shop
+    @shop.destroy
+    redirect_to shops_url, status: :see_other, notice: "Shop was successfully deleted."
   end
 
   private

@@ -16,10 +16,16 @@ class ShopPolicy < ApplicationPolicy
   end
 
   def update?
-    record.user == user
+    is_shop_admin?
   end
 
   def destroy?
-    record.user == user
+    is_shop_admin?
+  end
+
+  private
+
+  def is_shop_admin?
+    record.shop_admins.exists?(user: user)
   end
 end
