@@ -4,7 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :events
-  has_many :shops
-  belongs_to :event_booking
-  belongs_to :shop_admin
+  has_many :event_bookings
+  has_many :shop_admins
 end
