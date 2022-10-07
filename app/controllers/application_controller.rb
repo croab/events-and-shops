@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   end
 
 
-  # Pundit
+  # Pundit - rescue the error on non-authorization
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
   def user_not_authorized
     flash[:alert] = "You are not authorized to perform this action."
