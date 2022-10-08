@@ -1,0 +1,10 @@
+
+.navbar-custom a {
+  color: white;
+  text-decoration: none;
+  font-family: $headers-font;
+
+  &:hover {
+    color: grey;
+  }
+}

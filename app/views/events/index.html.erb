@@ -4,6 +4,6 @@
     <%= render "event", event: event %>
   <% end %>
   <%# if policy(@events).new? %>
-    <%= link_to "Create new event", new_event_path %>
+    <%= link_to "Create new event", new_event_path, class: "btn btn-dark" %>
   <%# end %>
 </div>

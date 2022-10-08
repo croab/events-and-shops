@@ -5,7 +5,7 @@
     <%= f.input :description, as: :text %>
     <%= f.input :location, as: :string %>
     <%= f.input :shop_url, as: :string %>
-    <%= f.submit "Update store" %>
+    <%= f.submit "Update store", class: "btn btn-dark" %>
   <% end %>
-  <%= link_to "See all stores", shops_path %>
+  <%= link_to "See all stores", shops_path, class: "btn btn-dark" %>
 </div>

@@ -4,6 +4,6 @@
     <%= render "shop_card", shop: shop %>
   <% end %>
   <%# if policy(@events).new? %>
-    <%= link_to "Add store", new_shop_path %>
+    <%= link_to "Add store", new_shop_path, class: "btn btn-dark" %>
   <%# end %>
 </div>

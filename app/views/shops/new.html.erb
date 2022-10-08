@@ -5,7 +5,7 @@
     <%= f.input :description, as: :text, placeholder: 'What is your store about? 🤔' %>
     <%= f.input :location, as: :string, placeholder: 'Where can people find your store?' %>
     <%= f.input :shop_url, as: :string, placeholder: 'If your store has a website, add it here! 💻' %>
-    <%= f.submit "Create store" %>
+    <%= f.submit "Create store", class: "btn btn-dark" %>
   <% end %>
-  <%= link_to "See all stores", shops_path %>
+  <%= link_to "See all stores", shops_path, class: "btn btn-dark" %>
 </div>

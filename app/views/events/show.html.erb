@@ -8,11 +8,11 @@
   </ul>
   <%= link_to "Back to events", events_path %>
   <% if @current_user_has_booked %>
-      <%= button_to "I can't make it!", event_booking_path(@current_user_booking), method: :delete, data: {turbo_method: :delete} %>
+      <%= button_to "I can't make it!", event_booking_path(@current_user_booking), class: "btn btn-dark", method: :delete, data: {turbo_method: :delete} %>
   <% else %>
-    <%= button_to "Take part!", event_event_bookings_path(@event) %>
+    <%= button_to "Take part!", event_event_bookings_path(@event), class: "btn btn-dark" %>
   <% end %>
 
-  <%= link_to "Edit event", edit_event_path(@event) %>
-  <%= button_to "Delete", event_path(@event), method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  <%= link_to "Edit event", edit_event_path(@event), class: "btn btn-dark" %>
+  <%= button_to "Delete", event_path(@event), class: "btn btn-dark", method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 </div>

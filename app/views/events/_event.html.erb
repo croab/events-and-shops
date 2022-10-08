@@ -3,7 +3,7 @@
   <p><%= event.description %></p>
   <p><%= event.price %></p>
   <p>Event created by: <%= event.user.first_name %></p>
-  <%= link_to "See event", event_path(event) %>
-  <%= link_to "Edit event", edit_event_path(event) %>
-  <%= button_to "Delete", event_path(event), method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  <%= link_to "See event", event_path(event), class: "btn btn-dark" %>
+  <%= link_to "Edit event", edit_event_path(event), class: "btn btn-dark" %>
+  <%= button_to "Delete", event_path(event), class: "btn btn-dark", method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 </div>
