@@ -3,6 +3,8 @@
     <%= f.input :name, as: :string, placeholder: 'What is your store called?' %>
     <%= f.input :summary, as: :string, placeholder: 'Summary' %>
     <%= f.input :description, as: :text, placeholder: 'What is your store about? 🤔' %>
+    <%= f.input :location, as: :string, placeholder: 'Where can people find your store?' %>
+    <%= f.input :shop_url, as: :string, placeholder: 'If your store has a website, add it here! 💻' %>
     <%= f.submit "Create store" %>
   <% end %>
   <%= link_to "See all stores", shops_path %>
