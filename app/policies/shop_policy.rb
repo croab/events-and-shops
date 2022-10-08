@@ -16,11 +16,11 @@ class ShopPolicy < ApplicationPolicy
   end
 
   def update?
-    is_shop_admin?
+    is_shop_admin? || user.role.admin?
   end
 
   def destroy?
-    is_shop_admin?
+    is_shop_admin? || user.role.admin?
   end
 
   private

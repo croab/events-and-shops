@@ -7,6 +7,6 @@ class EventBookingPolicy < ApplicationPolicy
   end
 
   def destroy?
-    record.user == user || user.is_site_admin?
+    record.user == user || user.role.admin?
   end
 end
