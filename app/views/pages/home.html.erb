@@ -1,5 +1,9 @@
-<div class="home-page h-100">
-  <h1>Welcome to RandomVillage!</h1>
-  <p>Explore local events, local shops and more...</p>
-  <%= link_to "Enter", events_path, class: "btn btn-dark" %>
+<div class="home-page h-100 d-flex justify-content-around ">
+  <div class="home-card align-self-center p-3 d-flex justify-content-center">
+    <h1>Welcome to RandomVillage!</h1>
+    <p>Explore local events, local shops and more...</p>
+    <%# <div class="home-button"> %>
+      <%= link_to "Enter", events_path, class: "btn btn-dark" %>
+    <%# </div> %>
+  </div>
 </div>

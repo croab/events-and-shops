@@ -1,0 +1,12 @@
+.home-page {
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2)
+  ), url(image_path("home-page-image.jpeg"));
+  background-size: cover;
+}
+
+.home-card {
+  background-color: rgba(200, 200, 200, 0.6);
+  flex-direction: column;
+}
