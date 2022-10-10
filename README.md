@@ -1,24 +1,4 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This is a recently started, personal project to explore and develop my skills in RoR backend development. 
+The idea is that this site will be for a local town/village to enable them to see events, local shops (with video tours), make community donations via Stripe etc.
+It is also a work in progress and so as a result, no pull requests will be accepted here 😄.
+It should be noted that the idea for this project is not to demonstrate any front-end skills...
