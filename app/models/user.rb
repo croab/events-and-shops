@@ -9,15 +9,11 @@ class User < ApplicationRecord
   has_many :event_bookings, dependent: :destroy
   has_many :shop_admins, dependent: :destroy
 
-  # def is_site_admin?
-  #   site_admin == true
-  # end
+  # Validates presence of several
+  validates :first_name, :last_name, :email, presence: true
 
-  # def verify_site_admins
-  #   puts "Test"
-  #   # self.update(verified: true) if self.site_admin?
-  #   self.verified = true if self.site_admin?
-  # end
+  # Validates email
+  validates :email, uniqueness: true
 
   def create_user_role
     role = Role.new(user: self)
