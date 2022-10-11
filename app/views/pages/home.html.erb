@@ -1,5 +1,24 @@
-<div class="home-page h-100">
-  <h1>Welcome to RandomVillage!</h1>
-  <p>Explore local events, local shops and more...</p>
-  <%= link_to "Enter", events_path, class: "btn btn-dark" %>
+<section class="home">
+  <div class="home-card">
+    <h1 class="myH1">Our Village</h1>
+    <p class="myP">Explore local events, local shops and more...</p>
+    <%# <div class="home-button"> %>
+      <%= link_to "Explore", events_path, class: "custom-button btn btn-dark" %>
+    <%# </div> %>
+  </div>
+</section>
+
+<div class="home-content">
+    <!-- just to make scrolling effect possible -->
+  <h2 class="myH2">What is this app about?</h2>
+  <p class="myP">
+    This web app is a personal project, designed for an arbitrary 'local community'.
+    The app will enable visitors to see a range of local event, shops (with external links, video tours of the shops etc.), community donations, and message boards among other features.
+  </p>
+  <p class="myP">
+    The following work has been implemented so far:
+  </p>
+  <p class="myP">👉 A database schema for events, shops, users and their roles</p>
+  <p class="myP">👉 Validations on user data</p>
+  <p class="myP">👉 Devise and Pundit gems for authentication and authorization</p>
 </div>

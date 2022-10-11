@@ -4,16 +4,43 @@
 // @import "config/bootstrap_variables";
 
 // External libraries
-// @import "bootstrap/scss/bootstrap";
+@import "font-awesome";
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
 
-// body::-webkit-scrollbar {
-//   display: none;  /* Safari and Chrome */
-// }
-
+html,
 body {
-  font-family: $body-font;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 62.5%;
+    font-size: 10px;
+}
+
+.myH1 {
+  text-align:center;
+	font-size: $h1-size;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.myH2 {
+	text-align:center;
+  font-weight: 300;
+	font-size: $h2-size;
+}
+.myP {
+	text-align: justify;
+	padding-left:15%;
+	padding-right:15%;
+	font-size: $p-size;
+  font-weight: 300;
+}
+@media all and (max-width:700px){
+	.myP {
+		padding:2%;
+	}
 }

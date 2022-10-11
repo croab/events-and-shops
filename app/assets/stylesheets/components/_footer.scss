@@ -1,0 +1,25 @@
+.footer {
+  background-color: rgba(0, 0, 0, 0.863);
+  height: 150px;
+  width: 100%;
+  padding: 25px;
+}
+.whitelogo {
+  color:white;
+  font-size:2em;
+}
+.whitelogo:hover {
+  color:lightgray;
+}
+
+.footer-text {
+  color:white;
+  margin: 0px;
+  padding:0px;
+  font-size: $p-size;
+}
+
+.footer-logo {
+  font-size: $p-size;
+  color: white;
+}
