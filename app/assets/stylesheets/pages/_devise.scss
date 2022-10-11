@@ -1,0 +1,29 @@
+.devise-container {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: $p-size;
+}
+
+.input {
+  margin: 5px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input > label {
+  margin-right: 15px;
+}
+
+label > input {
+  margin-right: 15px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0px;
+}
