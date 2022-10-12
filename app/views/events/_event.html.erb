@@ -1,9 +1,11 @@
 <div class="event_card">
-  <h3><%= event.title %></h3>
+  <h3><%= emojis.sample %> <%= event.title %></h3>
   <p><%= event.description %></p>
-  <p><%= event.price %></p>
+  <p>£<%= number_with_precision(event.price, precision: 2) %></p>
   <p>Event created by: <%= event.user.first_name %></p>
-  <%= link_to "See event", event_path(event), class: "btn btn-dark" %>
-  <%= link_to "Edit event", edit_event_path(event), class: "btn btn-dark" %>
-  <%= button_to "Delete", event_path(event), class: "btn btn-dark", method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  <div class="index-buttons">
+    <%= link_to "See event", event_path(event), class: "index-button btn btn-dark" %>
+    <%= link_to "Edit event", edit_event_path(event), class: "index-button btn btn-dark" %>
+    <%= button_to "Delete", event_path(event), class: "index-button btn btn-dark", method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  </div>
 </div>

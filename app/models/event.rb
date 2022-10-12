@@ -8,8 +8,7 @@ class Event < ApplicationRecord
 
   # VALIDATIONS
   # Validates presence of all
-  validates :title, :description, :price, :location, :date, presence: true
-  # :time,
+  validates :title, :description, :price, :location, :date, :time, presence: true
 
   # Validates title
   validates :title, length: { minimum: 5, maximum: 150 }

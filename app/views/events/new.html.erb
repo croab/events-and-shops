@@ -4,8 +4,8 @@
   <%= f.input :description, as: :text, placeholder: 'Description' %>
   <%= f.input :location, as: :string, placeholder: 'Location' %>
   <%= f.input :price, as: :float %>
-  <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker", autocomplete: 'off'} %>
-  <%#= f.input :date, as: :date, order: [:year, :month, :day] %>
+  <%= f.input :date, as: :date %>
+  <%# , order: [:year, :month, :day] %>
   <%= f.input :time, as: :time %>
   <%= f.submit "Create event", class: "btn btn-dark" %>
 <% end %>

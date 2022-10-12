@@ -1,7 +1,7 @@
 <div class="page-container">
   <h1>Event index</h1>
   <% @events.each do |event| %>
-    <%= render "event", event: event %>
+    <%= render "event", event: event, emojis: @emojis %>
   <% end %>
   <%# if policy(@events).new? %>
     <%= link_to "Create new event", new_event_path, class: "btn btn-dark" %>
