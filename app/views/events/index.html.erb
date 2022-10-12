@@ -1,5 +1,9 @@
 <div class="page-container">
   <h1>Event index</h1>
+  <%= simple_form_for :search, url: events_path, method: "GET" do |f| %>
+    <%= f.input :query, input_html: {value: ""}, label: false %>
+    <%= f.submit "Search", class: "btn btn-dark" %>
+  <% end %>
   <% @events.each do |event| %>
     <%= render "event", event: event, emojis: @emojis %>
   <% end %>

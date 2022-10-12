@@ -22,4 +22,11 @@ class Event < ApplicationRecord
   # Validates location
   validates :location, length: { minimum: 2, maximum: 150 }
 
+  # Algolia
+  include AlgoliaSearch
+
+  algoliasearch do
+    # Use all default configuration
+  end
+
 end

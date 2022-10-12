@@ -2,7 +2,12 @@ class EventsController < ApplicationController
   before_action :set_event, only: %i[ show edit update destroy ]
 
   def index
-    @events = policy_scope(Event)
+    if params[:search][:query].present?
+      @events = policy_scope(Event).algolia_search(params[:search][:query])
+      # raise
+    else
+      @events = policy_scope(Event)
+    end
     @emojis = ['🥹','😂','🥳','🤩','🪄','🎷','🙌','😍','😎','🙏']
   end
 
@@ -60,6 +65,10 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:title, :photo, :description, :price, :location, :date, :time)
+  end
+
+  def search_params
+    params.require(:event).permit(:query)
   end
 
   def current_user_has_booked(attendees)
