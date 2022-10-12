@@ -1,12 +1,13 @@
 <div>
   <h1><%= @event.title %></h1>
+  <%= cl_image_tag @event.photo.key, height: 300, width: 400, crop: :fill %>
   <h3>Attendees</h3>
   <ul>
     <% @attendees.each do |attendee| %>
       <li><%= attendee.first_name %></li>
     <% end %>
   </ul>
-  <%= link_to "Back to events", events_path %>
+  <%= link_to "Back to events", events_path, class: "btn btn-dark" %>
   <% if @current_user_has_booked %>
       <%= button_to "I can't make it!", event_booking_path(@current_user_booking), class: "btn btn-dark", method: :delete, data: {turbo_method: :delete} %>
   <% else %>

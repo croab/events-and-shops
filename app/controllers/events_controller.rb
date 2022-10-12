@@ -58,7 +58,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:title, :description, :price)
+    params.require(:event).permit(:title, :photo, :description, :price, :location)
   end
 
   def current_user_has_booked(attendees)

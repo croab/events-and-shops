@@ -1,11 +1,15 @@
 class Event < ApplicationRecord
+  # ASSOCIATIONS
   belongs_to :user
   has_many :event_bookings, dependent: :destroy
-
   has_many :attendees, through: :event_bookings, source: :user
+  # Cloudinary
+  has_one_attached :photo
 
+  # VALIDATIONS
   # Validates presence of all
-  validates :title, :description, :price, :location, :date, :time, presence: true
+  validates :title, :description, :price, :location, :date, presence: true
+  # :time,
 
   # Validates title
   validates :title, length: { minimum: 5, maximum: 150 }
@@ -17,6 +21,6 @@ class Event < ApplicationRecord
   validates :price, numericality: { greater_than_or_equal_to: 0 }
 
   # Validates location
-  validates :location, length: { minimum: 10, maximum: 150 }
+  validates :location, length: { minimum: 2, maximum: 150 }
 
 end
