@@ -3,6 +3,7 @@ class EventsController < ApplicationController
 
   def index
     @events = policy_scope(Event)
+    @emojis = ['🥹','😂','🥳','🤩','🪄','🎷','🙌','😍','😎','🙏']
   end
 
   def show
@@ -58,7 +59,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:title, :description, :price)
+    params.require(:event).permit(:title, :photo, :description, :price, :location, :date, :time)
   end
 
   def current_user_has_booked(attendees)

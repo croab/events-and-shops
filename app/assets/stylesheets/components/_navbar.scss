@@ -19,6 +19,7 @@
   height: 60px;
   width: 60px;
   border-radius: 50%;
+  padding: 5px;
 }
 
 .nav div.main_list {
@@ -36,12 +37,13 @@
 }
 
 .nav div.main_list ul li {
-    width: auto;
-    height: 65px;
-    padding: 0;
-    padding-right: 3rem;
+  width: auto;
+  height: 65px;
+  padding: 0;
+  padding-right: 3rem;
 }
 
+// Navbar conditional for background
 .nav div.main_list ul li a {
     text-decoration: none;
     color: #fff;
@@ -49,10 +51,16 @@
     font-size: 25px;
 }
 
-.nav div.main_list ul li a:hover {
-    color: #dddddd;
+.nav div.main_list ul li a.none-home-page {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  line-height: 65px;
+  font-size: 25px;
 }
-
+.nav div.main_list ul li a:hover {
+  color: #ffac31;
+}
+///////////////////
 
 .navTrigger {
     display: none;
@@ -98,9 +106,11 @@
         left: 0;
         bottom: 0;
         background-color: #111;
+
         /*same background color of navbar*/
         background-position: center top;
     }
+
     .nav div.main_list ul li {
         width: 100%;
         text-align: right;
@@ -311,5 +321,5 @@
 
 .affix {
     padding: 0;
-    background-color: #111;
+    background-color: rgb(255, 209, 73);
 }

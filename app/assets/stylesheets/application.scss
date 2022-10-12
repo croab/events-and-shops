@@ -16,8 +16,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    font-size: 62.5%;
-    font-size: 10px;
+    font-size: $p-size;
 }
 
 .myH1 {
@@ -50,4 +49,20 @@ body {
   justify-content: space-between;
   flex-direction: column;
   min-height: 100vh;
+  margin-top: 20vh;
+  margin-bottom: 20vh;
+}
+
+.yield-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.yield-container > form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
