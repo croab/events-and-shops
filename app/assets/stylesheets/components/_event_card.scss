@@ -1,0 +1,25 @@
+.event_card {
+  position: relative;
+  display: flex;
+  // justify-content: space-between;
+  margin: 2vh 0;
+  padding: 2vh 0;
+}
+
+.card-info {
+  width: 45%;
+}
+
+.card-image {
+  width: 45%;
+}
+
+.card-buttons {
+  padding-top: 4vh;
+  padding-bottom: 4vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  width: 10%;
+}

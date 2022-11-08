@@ -1,13 +1,15 @@
 <div class="page-container">
-  <h1>Event index</h1>
-  <%= simple_form_for :search, url: events_path, method: "GET" do |f| %>
-    <%= f.input :query, input_html: {value: ""}, label: false %>
-    <%= f.submit "Search", class: "btn btn-dark" %>
-  <% end %>
+  <h1 class="myH1">All Events</h1>
+  <div class="search-and-create">
+    <%= simple_form_for :search, url: events_path, method: "GET", html: { class: "search-form"} do |f| %>
+      <%= f.input :query, input_html: {value: ""}, label: false %>
+      <%= f.submit "Search", class: "btn btn-dark" %>
+    <% end %>
+    <%= link_to "Create new event", new_event_path, class: "btn btn-dark" %>
+  </div>
   <% @events.each do |event| %>
     <%= render "event", event: event, emojis: @emojis %>
   <% end %>
   <%# if policy(@events).new? %>
-    <%= link_to "Create new event", new_event_path, class: "btn btn-dark" %>
   <%# end %>
 </div>
