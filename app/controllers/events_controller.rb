@@ -2,9 +2,11 @@ class EventsController < ApplicationController
   before_action :set_event, only: %i[ show edit update destroy ]
 
   def index
-    if params[:search][:query].present?
+
+    puts "OUTPUT: #{params}"
+    if params[:search].present? && params[:search][:query].present?
       @events = policy_scope(Event).algolia_search(params[:search][:query])
-      # raise
+    #   # raise
     else
       @events = policy_scope(Event)
     end
