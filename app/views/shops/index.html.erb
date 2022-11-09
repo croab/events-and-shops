@@ -1,9 +1,11 @@
-<div class="shops">
-  <h1>Shops</h1>
+<div class="page-container">
+  <div>
+    <h1 class="myH1">Shops</h1>
+    <%= link_to "Add store", new_shop_path, class: "btn btn-dark" %>
+  </div>
   <% @shops.each do |shop| %>
     <%= render "shop_card", shop: shop %>
   <% end %>
   <%# if policy(@events).new? %>
-    <%= link_to "Add store", new_shop_path, class: "btn btn-dark" %>
   <%# end %>
 </div>

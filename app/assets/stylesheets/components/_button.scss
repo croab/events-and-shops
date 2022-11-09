@@ -5,3 +5,12 @@ a.custom-button {
 input.custom-button {
   font-size: $p-size;
 }
+
+.show-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.button-spacing {
+  margin: 10px 10px;
+}
