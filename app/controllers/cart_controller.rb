@@ -1,3 +1,6 @@
+require 'stripe'
+require 'sinatra'
+
 class CartController < ApplicationController
   def show
     @render_cart = false
@@ -40,5 +43,42 @@ class CartController < ApplicationController
     end
 
     authorize @event_booking, policy_class: CartPolicy
+  end
+
+  def make_payment
+    key = ENV["STRIPE_API_KEY"]
+
+    set :static, true
+    set :port, 4242
+
+    domain=ENV["DOMAIN"]
+
+    @cart = Cart.find_by(id: session[:cart_id])
+    cart_items = []
+
+    @cart.event_bookings do |event_booking|
+      quantity = event_booking.quantity
+      price = event_booking.event.price
+      cart_items << { price: price, quantity: quantity }
+    end
+
+    content_type 'application/json'
+
+    session = Stripe::Checkout::Session.create({
+      line_items: cart_items,
+      mode: 'payment',
+      success_url: domain + '/success.html',
+      cancel_url: domain + '/cancel.html',
+    })
+    redirect session.url, 303
+
+  end
+
+  def success
+
+  end
+
+  def cancel
+
   end
 end

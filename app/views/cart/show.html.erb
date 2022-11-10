@@ -2,5 +2,5 @@
 <p>Your total is: £<%= @cart.total %></p>
 <% @cart.event_bookings.each do |event_booking| %>
 
-  <p>Cart contains: <%= event_booking %></p>
+  <%= button_to "Make payment", cart_make_payment_path %>
 <% end %>

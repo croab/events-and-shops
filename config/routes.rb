@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :cart, only: [:show]
   post 'cart/add'
   post 'cart/remove'
+  post 'cart/make_payment'
+  get 'cart/success'
+  get 'cart/cancel'
   resources :users
   resources :events do
     resources :event_bookings, only: [:create]
