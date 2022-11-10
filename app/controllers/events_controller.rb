@@ -10,7 +10,7 @@ class EventsController < ApplicationController
     else
       @events = policy_scope(Event)
     end
-    @emojis = ['🥹','😂','🥳','🤩','🪄','🎷','🙌','😍','😎','🙏']
+    # @emojis = ['🥹','😂','🥳','🤩','🪄','🎷','🙌','😍','😎','🙏']
   end
 
   def show

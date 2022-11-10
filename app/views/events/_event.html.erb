@@ -1,5 +1,6 @@
 <div class="event_card" id="<%= event.id %>">
   <div class="card-info">
+    <% emojis = ['🥹','😂','🥳','🤩','🪄','🎷','🙌','😍','😎','🙏'] %>
     <h3><%= emojis.sample %> <%= event.title %></h3>
     <p><%= event.description %></p>
     <p>£<%= number_with_precision(event.price, precision: 2) %></p>
