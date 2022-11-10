@@ -31,6 +31,14 @@ class CartController < ApplicationController
   def remove
     @event_booking = EventBooking.find_by(id: params[:id])
     @event_booking.destroy
+
+    respond_to do |format|
+      format.turbo_stream do
+        render turbo_stream:
+          turbo_stream.replace('cart', partial: 'cart/cart', locals: { cart: @cart })
+      end
+    end
+
     authorize @event_booking, policy_class: CartPolicy
   end
 end
