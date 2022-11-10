@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_10_102629) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_10_105839) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -53,6 +53,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_10_102629) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "quantity"
+    t.bigint "cart_id"
+    t.index ["cart_id"], name: "index_event_bookings_on_cart_id"
     t.index ["event_id"], name: "index_event_bookings_on_event_id"
     t.index ["user_id"], name: "index_event_bookings_on_user_id"
   end
@@ -114,6 +116,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_10_102629) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "event_bookings", "carts"
   add_foreign_key "event_bookings", "events"
   add_foreign_key "event_bookings", "users"
   add_foreign_key "events", "users"

@@ -31,6 +31,11 @@
       </ul>
     <% end %>
   </div>
+  <%= form_with(url: cart_add_path) do |f| %>
+    <%= f.hidden_field :id, value: @event.id %>
+    <%= f.number_field :quantity, value: 0, min: 0 %>
+    <%= f.submit "Add to cart" %>
+  <% end %>
   <div class="show-buttons">
     <%= link_to "Back to events", events_path, class: "btn btn-dark button-spacing" %>
     <% if @current_user_has_booked %>

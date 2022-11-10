@@ -9,4 +9,12 @@ class CartPolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def add?
+    true
+  end
+
+  def remove?
+    true
+  end
 end
