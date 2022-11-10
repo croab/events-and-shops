@@ -21,6 +21,7 @@
     <%#= render "shared/flashes" %>
     <div class="app-container">
       <%= render "shared/navbar" %>
+      <%= render "cart/cart" if @render_cart %>
       <main class="yield-container">
         <%= yield %>
       </main>

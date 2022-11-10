@@ -1,0 +1,6 @@
+<h1>Your Cart</h1>
+<p>Your total is: £<%= @cart.total %></p>
+<% @cart.event_bookings.each do |event_booking| %>
+
+  <%= button_to "Make payment", cart_make_payment_path %>
+<% end %>

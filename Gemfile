@@ -78,3 +78,6 @@ gem "devise"
 gem "pundit"
 gem "cloudinary"
 gem "algoliasearch-rails"
+gem 'stripe'
+gem 'pay'
+gem 'sinatra'

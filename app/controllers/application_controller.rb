@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
   include Pundit::Authorization
+  before_action :set_render_cart
+  before_action :initialize_cart
 
   # Pundit: allow-list approach
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
@@ -23,6 +25,23 @@ class ApplicationController < ActionController::Base
     flash[:alert] = "You are not authorized to perform this action."
     # redirect_to(root_path)
     redirect_back(fallback_location: root_path)
+  end
+
+  #Cart
+  def set_render_cart
+    @render_cart = true
+    # authorize @render_cart
+  end
+
+  def initialize_cart
+    @cart ||= Cart.find_by(id: session[:cart_id])
+
+    if @cart.nil?
+      @cart = Cart.create
+      session[:cart_id] = @cart.id
+    end
+
+    # authorize @cart
   end
 
   private
