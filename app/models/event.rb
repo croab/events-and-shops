@@ -2,6 +2,7 @@ class Event < ApplicationRecord
   # ASSOCIATIONS
   belongs_to :user
   has_many :event_bookings, dependent: :destroy
+  has_many :carts, through: :event_bookings
   has_many :attendees, through: :event_bookings, source: :user
   # Cloudinary
   has_one_attached :photo
