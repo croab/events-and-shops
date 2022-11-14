@@ -1,0 +1,7 @@
+var stripe = Stripe("<%= ENV['STRIPE_API_PUBLIC'] %>")
+
+stripe.redirectToCheckout({
+    sessionId: '<%= @session.id %>'
+}).then(function (result) {
+    console.log(result.error_message)
+});

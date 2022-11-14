@@ -3,6 +3,11 @@
   <% if @cart.event_bookings.count > 0 %>
     <%= render "cart/cart_items", cart: @cart %>
     <p>Total: <%= @cart.total %></p>
+    <%= button_to "Submit Payment",
+      checkout_create_path,
+      method: :post,
+      data: {turbo: false}
+      %>
   <% else %>
     <p>Your cart is empty!</p>
   <% end %>
