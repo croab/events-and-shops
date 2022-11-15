@@ -1,0 +1,12 @@
+#cart {
+  z-index: 10;
+  position: fixed;
+  display: flex;
+  right: 10vw;
+  top: 12vh;
+}
+
+.cart-card {
+  padding: 1vh 1vw;
+  background-color: white;
+}

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post 'cart/make_payment'
   get 'cart/success'
   get 'cart/cancel'
+  post 'checkout/create', to: 'checkouts#create'
   resources :users
   resources :events do
     resources :event_bookings, only: [:create]
