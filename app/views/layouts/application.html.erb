@@ -19,7 +19,7 @@
 
   <body>
     <%#= render "shared/flashes" %>
-    <div class="app-container">
+    <div class="app-container" data-controller="cart">
       <%= render "shared/navbar" %>
       <%= render "cart/cart" if @render_cart %>
       <main class="yield-container">

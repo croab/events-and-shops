@@ -1,5 +1,5 @@
 <%= turbo_frame_tag "cart" do %>
-  <div class="cart-card">
+  <div class="cart-card hidden" data-cart-target="cartBox">
     <% if @cart.event_bookings.count > 0 %>
       <p>Cart total: £<%= @cart.total %></p>
     <% else %>
