@@ -1,14 +1,10 @@
 <%= turbo_frame_tag "cart" do %>
-  <h2>Cart</h2>
-  <% if @cart.event_bookings.count > 0 %>
-    <%= render "cart/cart_items", cart: @cart %>
-    <p>Total: <%= @cart.total %></p>
-    <%= button_to "Submit Payment",
-      checkout_create_path,
-      method: :post,
-      data: {turbo: false}
-      %>
-  <% else %>
-    <p>Your cart is empty!</p>
-  <% end %>
+  <div class="cart-card">
+    <% if @cart.event_bookings.count > 0 %>
+      <p>Cart total: £<%= @cart.total %></p>
+    <% else %>
+      <p>Your cart is empty!</p>
+    <% end %>
+    <%= button_to "Review checkout and pay", cart_path(@cart) %>
+  </div>
 <% end %>
