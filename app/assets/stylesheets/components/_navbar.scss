@@ -45,22 +45,22 @@
 }
 
 // Navbar conditional for background
-.nav div.main_list ul li a {
+.nav div.main_list ul li a, i {
     text-decoration: none;
     color: #fff;
     line-height: 65px;
     font-size: 25px;
 }
 
-.nav div.main_list ul li a.none-home-page {
+.nav div.main_list ul li a.none-home-page, i.none-home-page {
   text-decoration: none;
   color: rgb(0, 0, 0);
   line-height: 65px;
   font-size: 25px;
 }
-.nav div.main_list ul li a:hover {
-  color: #ffac31;
-}
+// .nav div.main_list ul li a:hover {
+//   color: #ffac31;
+// }
 ///////////////////
 
 .navTrigger {
