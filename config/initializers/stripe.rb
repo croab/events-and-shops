@@ -4,4 +4,3 @@ Rails.configuration.stripe = {
   secret: ENV['STRIPE_API_SECRET']
 }
 Stripe.api_key = Rails.configuration.stripe[:secret]
-p Stripe.api_key

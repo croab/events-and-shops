@@ -32,7 +32,7 @@
             <%= link_to cart_path(@cart) do %>
               <i class="<%= cart_styles %>" data-action="mouseover->cart#revealCart mouseout->cart#hideCart"></i>
             <% end %>
-            <p><%= @cart.num_items %></p>
+            <p><%#= @cart.num_items %></p>
           </div>
         </li>
       </ul>

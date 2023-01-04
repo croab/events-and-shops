@@ -9,8 +9,10 @@ class CartController < ApplicationController
   end
 
   def add
+    # event :id provided as hidden field in form,:quantity set by user in form
     @event = Event.find_by(id: params[:id])
     quantity = params[:quantity].to_i
+    # Check if user already has a booking for this event
     current_event_booking = @event.event_bookings.find_by(event_id: @event.id, user_id: current_user)
     if current_event_booking && quantity > 0
       current_event_booking.update(quantity:)
@@ -19,7 +21,7 @@ class CartController < ApplicationController
     else
       @cart.event_bookings.create(event: @event, user: current_user, quantity: quantity)
     end
-
+    # Replace just the pop up cart - not currently working
     respond_to do |format|
       format.turbo_stream do
         render turbo_stream:

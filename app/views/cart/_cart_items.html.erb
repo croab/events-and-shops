@@ -2,7 +2,7 @@
   <% event = event_booking.event %>
   <div id="<%= "cart-#{event.id}" %>"></div>
   <p><%= event.title %></p>
-  <p><%= event.price %></p>
+  <p>£<%= event.price %></p>
   <%= form_with(url: cart_add_path) do |f| %>
     <%= f.hidden_field :id, value: event.id %>
     <%= f.number_field :quantity, value: event_booking.quantity, min: 0 %>
@@ -12,5 +12,5 @@
     <%= f.hidden_field :id, value: event_booking.id %>
     <%= f.submit "Remove from cart" %>
   <% end %>
-  <p><%= event_booking.total %></p>
+  <p>Total: £<%= event_booking.total %></p>
 <% end %>

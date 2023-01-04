@@ -11,9 +11,9 @@ puts "Done"
 puts "Creating users"
 test_users = [
   {
-    first_name: 'KING',
-    last_name: 'KING',
-    email: 'king@gmail.com',
+    first_name: 'ADMIN',
+    last_name: 'ADMIN',
+    email: 'admin@gmail.com',
     password: '123123',
   },
   {
@@ -47,8 +47,8 @@ test_users.each do |user|
 end
 puts "Done"
 
-# Making KING admin
-puts "Ensuring 'king@gmail.com' is admin"
+# Making ADMIN admin
+puts "Ensuring 'admin@gmail.com' is admin"
 User.first.role.update(admin: true)
 puts "Done"
 

@@ -36,12 +36,6 @@
   <% end %>
   <div class="show-buttons">
     <%= link_to "Back to events", events_path, class: "btn btn-dark button-spacing" %>
-    <%# if @current_user_has_booked %>
-        <%#= button_to "I can't make it!", event_booking_path(@current_user_booking), class: "btn btn-dark button-spacing", method: :delete, data: {turbo_method: :delete} %>
-    <%# else %>
-      <%#= button_to "Take part!", event_event_bookings_path(@event), class: "btn btn-dark button-spacing" %>
-    <%# end %>
-
     <%= link_to "Edit event", edit_event_path(@event), class: "btn btn-dark button-spacing" %>
     <%= button_to "Delete", event_path(@event), class: "btn btn-dark button-spacing", method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
   </div>

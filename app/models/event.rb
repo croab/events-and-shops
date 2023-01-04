@@ -8,19 +8,10 @@ class Event < ApplicationRecord
   has_one_attached :photo
 
   # VALIDATIONS
-  # Validates presence of all
   validates :title, :description, :price, :location, :date, :time, presence: true
-
-  # Validates title
   validates :title, length: { minimum: 5, maximum: 150 }
-
-  # Validates description
   validates :description, length: { minimum: 40, maximum: 600 }
-
-  # Validates price
   validates :price, numericality: { greater_than_or_equal_to: 0 }
-
-  # Validates location
   validates :location, length: { minimum: 2, maximum: 150 }
 
   # Algolia
@@ -28,6 +19,8 @@ class Event < ApplicationRecord
 
   algoliasearch do
     # Use all default configuration
+    # I can set up further configuration of Algolia here if needed
+    # https://www.algolia.com/doc/framework-integration/rails/getting-started/setup/?client=ruby
   end
 
 end
