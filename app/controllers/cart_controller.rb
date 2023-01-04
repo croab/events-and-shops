@@ -11,7 +11,7 @@ class CartController < ApplicationController
   def add
     @event = Event.find_by(id: params[:id])
     quantity = params[:quantity].to_i
-    current_event_booking = @event.event_bookings.find_by(event_id: @event.id)
+    current_event_booking = @event.event_bookings.find_by(event_id: @event.id, user_id: current_user)
     if current_event_booking && quantity > 0
       current_event_booking.update(quantity:)
     elsif quantity <= 0
