@@ -27,10 +27,13 @@
           </li>
         <% end %>
         <li>
-          <% cart_styles = !current_page?(root_path) ? 'fa-solid fa-cart-shopping none-home-page' : 'fa-solid fa-cart-shopping' %>
-          <%= link_to cart_path(@cart) do %>
-            <i id="cart-icon" class="<%= cart_styles %>" data-action="mouseover->cart#revealCart mouseout->cart#hideCart"></i>
-          <% end %>
+          <div id="cart-icon">
+            <% cart_styles = !current_page?(root_path) ? 'fa-solid fa-cart-shopping none-home-page' : 'fa-solid fa-cart-shopping' %>
+            <%= link_to cart_path(@cart) do %>
+              <i class="<%= cart_styles %>" data-action="mouseover->cart#revealCart mouseout->cart#hideCart"></i>
+            <% end %>
+            <p><%= @cart.num_items %></p>
+          </div>
         </li>
       </ul>
 

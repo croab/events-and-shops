@@ -5,4 +5,8 @@ class Cart < ApplicationRecord
   def total
     event_bookings.to_a.sum { |event_booking| event_booking.total}
   end
+
+  def num_items
+    event_bookings.to_a.sum { |event_booking| event_booking.quantity}
+  end
 end

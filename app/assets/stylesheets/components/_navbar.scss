@@ -61,6 +61,15 @@
 // .nav div.main_list ul li a:hover {
 //   color: #ffac31;
 // }
+
+#cart-icon {
+  display: flex;
+}
+
+#cart-icon p {
+  position: absolute;
+}
+
 ///////////////////
 
 .navTrigger {
