@@ -11,7 +11,9 @@
   </div>
   <div class="card-buttons">
     <%= link_to "See event", event_path(event), class: "index-button btn btn-dark" %>
-    <%= link_to "Edit event", edit_event_path(event), class: "index-button btn btn-dark" %>
+    <% if current_user.role.admin %>
+      <%= link_to "Edit event", edit_event_path(event), class: "index-button btn btn-dark" %>
+    <% end %>
     <%= button_to "Delete", event_path(event), class: "index-button btn btn-dark", method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
   </div>
 </div>

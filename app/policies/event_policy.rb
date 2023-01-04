@@ -11,8 +11,6 @@ class EventPolicy < ApplicationPolicy
 
   def create?
     true
-    # user.admin?
-    # record.user == user
   end
 
   def update?
