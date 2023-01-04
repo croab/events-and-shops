@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  Stripe.api_key = ENV['STRIPE_API_SECRET']
+
   after_create :create_user_role
   # Stripe
   after_save :assign_customer_id

@@ -1,12 +1,14 @@
-<%= simple_form_for @event do |f| %>
-  <%= f.input :title, as: :string, placeholder: 'Title' %>
-  <%= f.input :photo, as: :file %>
-  <%= f.input :description, as: :text, placeholder: 'Description' %>
-  <%= f.input :location, as: :string, placeholder: 'Location' %>
-  <%= f.input :price, as: :float %>
-  <%= f.input :date, as: :date %>
-  <%# , order: [:year, :month, :day] %>
-  <%= f.input :time, as: :time %>
-  <%= f.submit "Create event", class: "btn btn-dark" %>
-<% end %>
-<%= link_to "Back to events", events_path, class: "btn btn-dark" %>
+<div class="page-container">
+  <%= simple_form_for @event do |f| %>
+    <%= f.input :title, as: :string, placeholder: 'Title' %>
+    <%= f.input :photo, as: :file %>
+    <%= f.input :description, as: :text, placeholder: 'Description' %>
+    <%= f.input :location, as: :string, placeholder: 'Location' %>
+    <%= f.input :price, as: :float %>
+    <%= f.input :date, as: :date %>
+    <%# , order: [:year, :month, :day] %>
+    <%= f.input :time, as: :time %>
+    <%= f.submit "Create event", class: "btn btn-dark" %>
+  <% end %>
+  <%= link_to "Back to events", events_path, class: "btn btn-dark" %>
+</div>

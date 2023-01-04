@@ -4,7 +4,7 @@ class CheckoutsController < ApplicationController
   def create
     # checkout_items = checkout_params[:items].map(&:to_h)
     Stripe.api_key=ENV['STRIPE_API_SECRET']
-    session = Stripe::Checkout::Session.create({
+    data = {
       success_url: root_url,
       cancel_url: root_url,
       line_items: [{
@@ -13,12 +13,13 @@ class CheckoutsController < ApplicationController
           product_data: {
             name: 'Total'
           },
-          unit_amount: 2000
+          unit_amount: @cart.total * 100
         },
         quantity: 1
       }],
       mode: 'payment'
-    })
+    }
+    session = Stripe::Checkout::Session.create(data)
     # raise
     redirect_to session.url, allow_other_host: true
   end
